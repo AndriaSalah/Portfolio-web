@@ -3,7 +3,7 @@ body {
     height: 100%;
     width: 98%;
     background-color: #000000;
-    background-image: url(../Mywebsite/Aboutme/pictures/background.jpg);
+    background-image: url(/Aboutme/pictures/background.jpg);
     background-repeat: no-repeat;
 }
 nav{
