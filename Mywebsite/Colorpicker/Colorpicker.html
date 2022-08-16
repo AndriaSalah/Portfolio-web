@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background generator</title>
+    <link rel="stylesheet" href="../Colorpicker/styles.css">
+</head>
+<body>
+    
+    <nav class="navigation">
+        <a id='home' href="../Aboutme/aboutme.html">Home</a>
+        <ul>
+            <a href="../Calculator/Calculator.html">Calculator</a>
+            <a id="disabled" href="../Colorpicker/Colorpicker.html">Color Picker</a>
+            <span class="dropdown"> Other-Projects
+                <div class="dropdown-content">
+                    <a href="../Other-projects/Atm-proj.html">ATM-proj</a>
+                    <a href="../Other-projects/DFS.html">DFS-Maze-solver</a>
+                    <a href="../Other-projects/Crash-car.html">Crash-car</a>
+                </div>
+            </span>
+        </ul>
+    </nav>
+    
+    <div class="main">
+        <div class="pallets solid">
+            <h3>Pallet 1</h3>
+            <p id="value">text</p>
+            <input type="color" class="color-buttons" id="color" value="#8a2be2">
+        </div>
+        <div class="pallets solid1">
+            <h3>Pallet 2</h3>
+            <p id="value1">text</p>
+            <input type="color" class="color-buttons" id="color1" value="#2b71e2">
+        </div>
+        <div class="pallets linear">
+            <h3>Pallet 3</h3>
+            <div>
+                <p id="value2">text</p>
+                <p id="value3">text</p>
+            </div>
+            <div>
+                <input type="color" class="color-buttons" id="color2" value="#8A1414">
+                <input type="color" class="color-buttons" id="color3" value="#AC740B">
+            </div>
+        </div>
+    </div>
+    <script src="../Colorpicker/scripts.js"></script>
+</body>
+</html>
