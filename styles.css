@@ -121,7 +121,7 @@ width: 30%;
     text-align: center;
     font-family: 'Roboto', sans-serif;
     font-size: medium;
-    width: 20%;
+    width: 30%;
 }
 .link{
     padding: 1rem;
@@ -131,6 +131,11 @@ width: 30%;
     color: #c75717;
     background-color: transparent;
     border: none;
+}
+.second-container{
+    display: flex;
+    flex-flow: row;
+    padding-left: 15%;
 }
 
 body .info{
@@ -174,4 +179,19 @@ img{
     font-family: 'Inter', sans-serif;
     font-size: large;
     
+}
+
+@media only screen and (max-width :500px){
+    .second-container{
+        flex-flow: column ;
+        padding: 0;
+        
+    }
+    .second,.link{
+        width: auto;
+    }
+    .main{
+        padding: 0;
+    }
+
 }
