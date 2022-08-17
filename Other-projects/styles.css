@@ -195,7 +195,7 @@ a{
   .c2 img{
     
     width: auto;
-    height: 240px;
+    height: 200px;
   }
   .c3{
     flex-wrap:  wrap-reverse;
@@ -203,7 +203,7 @@ a{
   }
   .c3 img{
     width: auto;
-    height: 220px;
+    height: 200px;
     
   }
   .c1{
