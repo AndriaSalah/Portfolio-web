@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music player</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/Music-player/style.css" />
+  </head>
+  <body>
+    <nav class="navigation">
+      <a id="home" href="../index.html">Home</a>
+      <ul>
+        <a href="../Calculator/Calculator.html">Calculator</a>
+        <a href="../Colorpicker/Colorpicker.html">Color Picker</a>
+        <a href="#">Music Player</a>
+        <a href=""></a>
+        <span class="dropdown">
+          Other-Projects
+          <div class="dropdown-content">
+            <a href="../Other-projects/Atm-proj.html">ATM-proj</a>
+            <a href="#">DFS-Maze-solver</a>
+            <a href="../Other-projects/Crash-car.html">Crash-car</a>
+          </div>
+        </span>
+      </ul>
+    </nav>
+    <nav class="navigation2">
+      <a id="home" href="../index.html">Home</a>
+      <ul>
+        <span class="dropdown2">
+          menu
+          <div class="dropdown-content2">
+            <a href="../Calculator/Calculator.html">Calculator</a>
+            <a href="../Colorpicker/Colorpicker.html">Color Picker</a>
+            <a href="#">Music Player</a>
+            <a href="../Other-projects/Atm-proj.html">ATM-proj</a>
+            <a href="#">DFS-Maze-solver</a>
+            <a href="../Other-projects/Crash-car.html">Crash-car</a>
+          </div>
+        </span>
+      </ul>
+    </nav>
+
+    <div class="player">
+      <div class="container">
+        <div class="trackDetails">
+          <div class="trackArt rotate"></div>
+          <div class="trackName">name</div>
+          <div class="trackArtist">artist name</div>
+        </div>
+
+        <div class="sliders">
+          <div class="currentTime">00:00</div>
+          <input
+            type="range"
+            min="1"
+            max="100"
+            value="0"
+            class="seek_slider"
+            onchange="seekTo()"
+          />
+          <div class="totalDuration">00:00</div>
+        </div>
+        <div class="sliders volume">
+          <i class="fa-solid fa-volume-low"></i>
+          <input
+            type="range"
+            min="1"
+            max="100"
+            value="99"
+            class="volume_slider"
+            onchange="setVolume()"
+          />
+          <i class="fa-solid fa-volume-high"></i>
+        </div>
+        <div class="buttons">
+          <div class="shuffle" onclick="shuffles()">
+            <img src="/Music-player/assets/shuffle.png" alt="" />
+          </div>
+          <div class="previous" onclick="next_prevTrack('left')">
+            <img src="/Music-player/assets/left.png" alt="" />
+          </div>
+          <div class="play_pause" onclick="play()">
+            <img class="playBtn" src="/Music-player/assets/play.png" alt="" />
+          </div>
+
+          <div class="next" onclick="next_prevTrack('right')">
+            <img src="/Music-player/assets/right.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/Music-player/scripts.js"></script>
+  </body>
+</html>

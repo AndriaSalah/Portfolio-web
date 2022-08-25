@@ -215,10 +215,11 @@ a{
     
 } 
 
+
 #formula:focus{
     outline: none;
     border-color: #000000
-
+    
 }  
 
 p{

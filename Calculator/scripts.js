@@ -10,14 +10,6 @@ let answer = 0
 let startpos = 0
 let startfix = true
 
-startfi : string =''
-let b = {
-a : 1,
-b : 2
-} 
-
-
-Object.entries(b)
 const operators = ['+','-','*','/']
 
 function calculate(){
