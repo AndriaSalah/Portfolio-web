@@ -42,5 +42,5 @@ color1.addEventListener('change',changecolor)
 color2.addEventListener('change',changecolor)
 color3.addEventListener('change',changecolor)
 
-
-
+var donuts
+console.log()

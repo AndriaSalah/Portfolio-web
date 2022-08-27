@@ -176,9 +176,10 @@ a{
 .trackName{
     font-size: larger;
     padding-bottom: 0.5rem;
+    font-weight: 600;
 }
 .trackArtist{
-    font-size: smaller;
+    font-size: medium;
 }
 
 .sliders {
@@ -261,5 +262,9 @@ a{
         display: flex;
         
       }
+      .shuffle,.previous,.play_pause,.next{
+        margin-right: 2rem;
+      }
+
     
 }
