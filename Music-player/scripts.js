@@ -15,7 +15,7 @@ let updateTimer;
 
 let play_pause = document.querySelector('.playBtn')
 let shuffleBtn=document.querySelector('.shuffle');
-
+let playlist = document.querySelector('.playlist');
 trackArt.classList.add('amada')
 const musicLibrary = [
     {
@@ -58,9 +58,31 @@ const musicLibrary = [
 
 
 ]
+for (let index = 0; index < musicLibrary.length; index++) {
+    pushToPlayList(index)
+}
 
 loadtrack(track_index);
 
+function pushToPlayList(index){
+    var song = document.createElement('div');
+    song.classList.add('song');
+   
+    var imgPath = document.createElement('img');
+    imgPath.src = musicLibrary[index].imgPath;
+    
+    var songName = document.createElement('p');
+    songName.textContent = musicLibrary[index].trackName;
+   
+    var button = document.createElement('button');
+    button.textContent = 'play'
+  
+    song.appendChild(imgPath);
+    song.appendChild(songName);
+    song.appendChild(button);
+    
+    playlist.appendChild(song)
+}
 function loadtrack(track_index){
     clearInterval(updateTimer);
     reset();
@@ -212,12 +234,3 @@ function setUpdate(){
         totalDuration.textContent = durationMinutes + ":" + durationSeconds;
     }
 }
-
-
-
-
-
-
-
-
-

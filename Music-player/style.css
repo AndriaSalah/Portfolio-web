@@ -143,9 +143,15 @@ a{
     margin-left: 1rem;
     align-self: center;
 }
-
+                /* start of the music player */
+.player-playlist{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
 .player{
-    height: 95vh;
+    /* margin-left: 10rem; */
+    height: 60vh;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -254,6 +260,73 @@ a{
     }
 }
 
+.playlist{
+  visibility: hidden;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: transparent;
+    margin-left: 2rem;
+    width: 35rem;
+    height: 20rem;
+    align-self: center;
+    justify-self: center;
+    /* bottom: 20px; */
+    /* left: 38.75rem; */
+    border-radius: 10px;
+    box-shadow: 1px 5px 10px 1px rgba(0, 0, 0, 0.4);
+    overflow-y: scroll;
+    /* justify-content: space-evenly; */
+}
+.song{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;    
+
+}
+.song img{
+    width: auto;
+    height: 50px;
+    border-radius: 50%;
+    padding: 20px;
+}
+.song p{
+    box-sizing: content-box;
+    width: 180px;
+    text-size-adjust: 10%;
+    margin-left: 5rem;
+    font-size: 20px;
+    word-break: break-all;
+}
+.song button{
+    padding: 20px;
+    margin-left: 5rem;
+    border-radius: 50% 50%;
+    border: none;
+}
+::-webkit-scrollbar {
+    width: 10px; 
+    margin-right: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+    margin-right: 5px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgba(136, 136, 136, 0.5);
+    border-radius: 30px;
+    margin-right: 5px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(85, 85, 85, 0.5);
+  }
 @media only screen and (max-width: 786px){
     .navigation{
         display: none;
