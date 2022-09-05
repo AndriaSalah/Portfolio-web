@@ -377,6 +377,9 @@ background-color: rgba(163, 163, 163, 0.466) ;
         padding: 10px;
         
       }
+      .player{
+        margin-top: 2rem;
+      }
       .song button{
         margin: 10px;
       }
