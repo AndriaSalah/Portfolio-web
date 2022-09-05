@@ -338,7 +338,6 @@ background-color: rgba(163, 163, 163, 0.466) ;
 
 ::-webkit-scrollbar {
     width: 10px; 
-    margin-right: 10px;
     background-color: transparent;
   }
   
@@ -372,5 +371,23 @@ background-color: rgba(163, 163, 163, 0.466) ;
         margin-right: 2rem;
       }
 
+      .playlist{
+        width: 85%;
+        height: 11rem;
+        padding: 10px;
+        
+      }
+      .song button{
+        margin: 10px;
+      }
+      .song p{
+        margin-left: 0px;
+        font-size: 12px;
+      }
+
+      ::-webkit-scrollbar {
+        width: 6px; 
+
+      }
     
 }
