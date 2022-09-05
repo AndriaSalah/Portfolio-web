@@ -372,13 +372,15 @@ background-color: rgba(163, 163, 163, 0.466) ;
       }
 
       .playlist{
+        margin-top: 3rem;
         width: 85%;
         height: 11rem;
         padding: 10px;
         
       }
       .player{
-        margin-top: 2rem;
+        margin-top: 5rem;
+        height: 50vh;
       }
       .song button{
         margin: 10px;
