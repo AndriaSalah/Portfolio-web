@@ -1,21 +1,25 @@
 body {
     
     height: 100%;
-    width: 98%;
+    width: 100%;
     background-color: #000000;
     background-image: url(/Aboutme/pictures/background.jpg);
     background-repeat: no-repeat;
-    overflow: hidden;
+    overflow-x: hidden;
+
 }
+
 .navigation{
     
+    width: 98%;
     background-color: #0000007a;
-    width: 100%;
+    margin-right: 10px;
     padding: 1px;
     border-radius: 10px;
-    position: sticky;
+    position: relative;
     display: flex;
     justify-content: space-between;
+    
 }
 
 .navigation ul{
@@ -157,11 +161,13 @@ a{
     margin-left: 1rem;
     align-self: center;
 }
+
 .main {
     /* background-color: #c3c3c357 ; */
     display: flex;
     flex-flow: row wrap;
     width: 100%;
+    height: 100%;
     border-radius: 2rem;
     border: none;
     /* box-shadow: 5px 5px 18px 10px #9999999d; */
@@ -174,6 +180,9 @@ a{
     font-weight: 100px;
     letter-spacing: 10;
     color: #ffffff;
+    overflow: hidden;
+    position: relative;
+    /* position: fixed; */
 }
 .info{
 text-align: center;
@@ -293,16 +302,30 @@ img{
 }
 
 @media only screen and (max-width :500px){
+  body{
+    overflow-x: hidden;
+    position: fixed;
+    margin: 0;
+    padding-top: 5px; 
+  }
+  .container{
+    width: 95%;
+    position: relative;
+    padding: 10px;
+  }
     .second-container{
         flex-flow: column ;
         padding: 0;
+        margin: 1rem;
         
     }
     .second,.link{
         width: auto;
+        margin: 1rem;
     }
     .main{
         padding: 0;
+        margin-top: 1rem;
     }
 
     .navigation{
@@ -310,6 +333,9 @@ img{
       }
       .navigation2{
         display: flex;
+      }
+      .wave{
+        width: 200%;
       }
 
 }

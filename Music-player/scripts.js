@@ -17,6 +17,8 @@ let play_pause = document.querySelector('.playBtn')
 let shuffleBtn=document.querySelector('.shuffle');
 let playlist = document.querySelector('.playlist');
 trackArt.classList.add('amada')
+let nowplaying = document.querySelector(`.playlist`);
+let wasplaying = false 
 const musicLibrary = [
     {
         imgPath   : '/Music-player/Music/Artwork/1.png',
@@ -59,14 +61,19 @@ const musicLibrary = [
 
 ]
 for (let index = 0; index < musicLibrary.length; index++) {
-    pushToPlayList(index)
+    pushToPlayList(index) 
 }
+
+
+nowplaying = document.querySelector(`.playlist :nth-of-type(1n)`);
+nowplaying.classList.add('nowplaying')
 
 loadtrack(track_index);
 
 function pushToPlayList(index){
     var song = document.createElement('div');
     song.classList.add('song');
+
    
     var imgPath = document.createElement('img');
     imgPath.src = musicLibrary[index].imgPath;
@@ -76,13 +83,19 @@ function pushToPlayList(index){
    
     var button = document.createElement('button');
     button.textContent = 'play'
+    button.setAttribute("onclick",`playat(${index});`);
   
     song.appendChild(imgPath);
     song.appendChild(songName);
     song.appendChild(button);
     
     playlist.appendChild(song)
+
 }
+
+
+//  nowplaying.classList.add('.nowplaying')
+
 function loadtrack(track_index){
     clearInterval(updateTimer);
     reset();
@@ -95,13 +108,13 @@ function loadtrack(track_index){
     
     updateTimer = setInterval(setUpdate, 500);
     curr_track.addEventListener('ended', next);
-    
+
     randombg();
 
 }
 
 
-    function randombg(a){
+function randombg(a){
         let hex = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e'];
         
     
@@ -119,46 +132,41 @@ function loadtrack(track_index){
     
         let gradient = 'linear-gradient(' + angle + ',' + Color1 + ', ' + Color2 + ")";
         document.body.style.background = gradient;
-    }
+}
 
-    function reset(){
+function reset(){
         currentTime.textContent = '00:00';
         totalDuration.textContent = '00:00';
         seekSlider.value=0;
-    }
+}
 
-    function play(){
+function play(){
         
-        if(!shuffle){
-            if(!isplaying){
-            curr_track.play();
-            isplaying = true;
-            trackArt.style.animationPlayState = 'running';
-            play_pause.src = '/Music-player/assets/pause.png';
-            }
-            else {
-                curr_track.pause();
-                isplaying = false 
-                trackArt.style.animationPlayState = 'paused';
-                play_pause.src='/Music-player/assets/play.png';
-            }
-        }
-        else if(shuffle) {
-            track_index = Math.random() * 3
-            loadtrack(track_index)
-            curr_track.play()
-        }
+    if(!isplaying){
+        
+        curr_track.play();
+        isplaying = true;
+        trackArt.style.animationPlayState = 'running';
+        play_pause.src = '/Music-player/assets/pause.png';
     }
+    else {
+        
+        curr_track.pause();
+        isplaying = false 
+        trackArt.style.animationPlayState = 'paused';
+        play_pause.src='/Music-player/assets/play.png';
+    }
+ }
 
-    function shuffling(){
+function shuffling(){
         shuffle? shuffle : shuffle = false
-    }
-    function shuffles(){
+}
+function shuffles(){
         shuffle? 
         shuffleBtn.classList.remove('active'):
         shuffleBtn.classList.add('active')
-    }
-    function next_prevTrack(direction){
+}
+function next_prevTrack(direction){
         if(shuffle){
 
         }
@@ -190,9 +198,9 @@ function loadtrack(track_index){
         }
         
 
-    }
+}
 
-    function next() {
+function next() {
         if(track_index < musicLibrary.length-1){
             loadtrack(++track_index)
                 play();
@@ -202,16 +210,14 @@ function loadtrack(track_index){
                 loadtrack(track_index)
                 play();
             }
-    }
+}
 
-    function seekTo(){
+function seekTo(){
     let seektoo = curr_track.duration * (seekSlider.value / 100);
     curr_track.currentTime = seektoo;
-    console.log(seektoo)
 }
 function setVolume(){
     curr_track.volume = volumeSlider.value / 100;
-    console.log(volumeSlider)
 }
 
 function setUpdate(){
@@ -219,7 +225,6 @@ function setUpdate(){
     if(!isNaN(curr_track.duration)){
         seekPosition = curr_track.currentTime * (100 / curr_track.duration);
         seekSlider.value = seekPosition;
-        console.log(curr_track.duration)
         let currentMinutes = Math.floor(curr_track.currentTime / 60);
         let currentSeconds = Math.floor(curr_track.currentTime - currentMinutes * 60);
         let durationMinutes = Math.floor(curr_track.duration / 60);
@@ -233,4 +238,15 @@ function setUpdate(){
         currentTime.textContent = currentMinutes + ":" + currentSeconds;
         totalDuration.textContent = durationMinutes + ":" + durationSeconds;
     }
+}
+
+function playat(number){
+    
+    nowplaying.classList.remove('nowplaying')
+    nowplaying = document.querySelector(`.playlist :nth-of-type(${number + 1}n)`);
+    nowplaying.classList.add('nowplaying')
+    isplaying = false;
+    loadtrack(number)
+    play()
+
 }
