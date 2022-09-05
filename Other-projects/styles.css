@@ -16,6 +16,7 @@ body {
   position: sticky;
   display: flex;
   justify-content: space-between;
+  top: 5px;
 }
 
 .navigation ul{
@@ -306,7 +307,7 @@ a{
   }
   .c2 img{
     margin-top: 40px;
-    margin-left: 70px;
+    margin-left: 65px;
     width: 400px;
     height: 400px;
   }
@@ -319,9 +320,9 @@ a{
     width: 100%; 
   }
   .c3 img{
-    width: 380px;
+    width: auto;
     height: 400px;
-    margin-left: 70px;
+    margin-left: 65px;
   }
 
   .c3 a{

@@ -163,12 +163,13 @@ a{
     justify-content: space-evenly;
 }
 .player{
-    margin-top: 5rem;
-    height: 58vh;
+    margin-top: 7rem;
+    height: 20rem;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    margin-bottom: 8rem;
     
 }
 
@@ -288,7 +289,7 @@ a{
     background-color: transparent;
     /* margin-left: 2rem; */
     width: 35rem;
-    height: 15rem;
+    height: 12rem;
     align-self: center;
     justify-self: center;
     /* bottom: 20px; */
@@ -304,7 +305,8 @@ a{
     justify-content: center;
     align-items: center;    
     width: 100%;
-    border-radius: 30px;
+    border-radius: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.527);
     
 
 }
@@ -380,7 +382,7 @@ background-color: rgba(163, 163, 163, 0.466) ;
       }
 
       .playlist{
-        margin-top: 3rem;
+        margin-top: 1rem;
         width: 85%;
         height: 11rem;
         padding: 10px;
@@ -389,6 +391,7 @@ background-color: rgba(163, 163, 163, 0.466) ;
       .player{
         margin-top: 5rem;
         height: 50vh;
+        margin-bottom: 2rem;
       }
       .song button{
         margin: 10px;
