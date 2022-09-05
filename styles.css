@@ -9,6 +9,9 @@ body {
 
 }
 
+.container{
+  z-index: 1;
+}
 .navigation{
     
     width: 98%;
