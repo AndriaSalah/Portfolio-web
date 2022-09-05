@@ -17,8 +17,11 @@ let play_pause = document.querySelector('.playBtn')
 let shuffleBtn=document.querySelector('.shuffle');
 let playlist = document.querySelector('.playlist');
 trackArt.classList.add('amada')
-let nowplaying = document.querySelector(`.playlist`);
+let random = 0
 let wasplaying = false 
+let rand_check = false
+let rand_check_number = 0
+
 const musicLibrary = [
     {
         imgPath   : '/Music-player/Music/Artwork/1.png',
@@ -57,9 +60,12 @@ const musicLibrary = [
         trackName : 'Its time'
     },
     
-
+    
 
 ]
+
+
+
 for (let index = 0; index < musicLibrary.length; index++) {
     pushToPlayList(index) 
 }
@@ -99,20 +105,41 @@ function pushToPlayList(index){
 function loadtrack(track_index){
     clearInterval(updateTimer);
     reset();
-
+    if (!shuffle){
     curr_track.src = musicLibrary[track_index].musicPath
     curr_track.load();
     trackArt.style.backgroundImage = `url(${musicLibrary[track_index].imgPath})`;
     trackName.textContent = musicLibrary[track_index].trackName;
     trackArtist.textContent= musicLibrary[track_index].artistName;
-    
+    }
+    else{
+        while(!rand_check){
+            random = Math.floor(Math.random()*(musicLibrary.length -1))
+            if (rand_check_number != random){
+                rand_check = true
+                rand_check_number = random
+                break
+            }
+            else {
+                rand_check_number = random
+            }
+        }
+        curr_track.src = musicLibrary[random].musicPath
+        curr_track.load();
+        trackArt.style.backgroundImage = `url(${musicLibrary[random].imgPath})`;
+        trackName.textContent = musicLibrary[random].trackName;
+        trackArtist.textContent= musicLibrary[random].artistName
+        console.log(random)
+        playat(random)
+
+    }
     updateTimer = setInterval(setUpdate, 500);
     curr_track.addEventListener('ended', next);
 
-    randombg();
+    // randombg();
 
 }
-
+ 
 
 function randombg(a){
         let hex = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e'];
@@ -158,57 +185,60 @@ function play(){
     }
  }
 
-function shuffling(){
-        shuffle? shuffle : shuffle = false
-}
+
 function shuffles(){
-        shuffle? 
-        shuffleBtn.classList.remove('active'):
+        if(!shuffle){
         shuffleBtn.classList.add('active')
+        shuffle = true;
+        console.log('shuffle ' + shuffle)
+    }
+    else{
+        shuffleBtn.classList.remove('active')
+        shuffle = false;
+        console.log('shuffle ' + shuffle)
+    }
 }
 function next_prevTrack(direction){
-        if(shuffle){
-
-        }
-        if(direction = 'right'){
-        if(track_index < musicLibrary.length-1){
-            loadtrack(++track_index)
-                isplaying= false;
-                play();
+    if(!shuffle){
+        if(direction === 'right'){
+            if(track_index < musicLibrary.length-1){
+                 playat(++track_index)
             }
             else {
                 track_index = 0;
-                loadtrack(track_index)
-                isplaying= false;
-                play();
+                playat(track_index)
             }
         }
-        else if(direction = 'left'){
+        else if(direction === 'left'){
             if(track_index > 0){
-                loadtrack(--track_index)
-                isplaying= false;
-                    play();
+                playat(--track_index)
+
                 }
                 else {
                     track_index = 0;
-                    loadtrack(track_index)
-                    isplaying= false;
-                    play();
+                    playat(track_index)
+
                 }
         }
+    }
+    else {
+        rand_check = false
+        loadtrack()
+    }
         
 
 }
 
 function next() {
         if(track_index < musicLibrary.length-1){
-            loadtrack(++track_index)
-                play();
+            playat(++track_index)
+                
             }
             else {
+                curr_track.pause();
                 track_index = 0;
-                loadtrack(track_index)
-                play();
+                playat(track_index)
+                
             }
 }
 
@@ -246,7 +276,10 @@ function playat(number){
     nowplaying = document.querySelector(`.playlist :nth-of-type(${number + 1}n)`);
     nowplaying.classList.add('nowplaying')
     isplaying = false;
+    if(!shuffle){
     loadtrack(number)
     play()
+    }
+    else play()
 
 }

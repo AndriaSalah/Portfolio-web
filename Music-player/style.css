@@ -2,7 +2,7 @@
      font-family: 'Roboto', sans-serif;
 }
 body{
-  /* position: relative; */
+ background-image: url(/Aboutme/pictures/background.jpg);
  
 }
 
@@ -173,6 +173,7 @@ a{
 }
 
 .container{
+    background-color: #ffffff9c;
     border-radius: 20px;
     box-shadow: 1px 5px 10px 1px rgba(0, 0, 0, 0.4);
 }
@@ -263,6 +264,11 @@ a{
 }
 .active{
     background-color: rgba(44, 44, 44, 0.425);
+    
+}
+
+.active p{
+  color: black;
 }
 @keyframes rotation{
     from{
@@ -288,7 +294,7 @@ a{
     /* bottom: 20px; */
     /* left: 38.75rem; */
     border-radius: 10px;
-    box-shadow: 1px 5px 10px 1px rgba(0, 0, 0, 0.4);
+    box-shadow: 1px 5px 10px 1px rgba(255, 255, 255, 0.4);
     overflow-y: scroll;
     /* justify-content: space-evenly; */
     padding: 40px ;
@@ -312,7 +318,8 @@ a{
     padding: 20px;
 }
 .song p{
-    
+  
+  color: #ffffff;
     width: 180px;
     text-size-adjust: 10%;
     margin-left: 5rem;
@@ -321,13 +328,14 @@ a{
     font-weight: bolder;
 }
 .song button{
+    color: #ffffff;
     padding: 20px;
     margin-left: 5rem;
-    border-radius: 50% 50%;
+    border-radius: 20px;
     border: none;
     background-color: transparent;
     box-shadow: 1px 5px 10px 1px rgba(0, 0, 0, 0.4); ;
-    font-weight: bolder;
+    font-weight: bold;
     cursor: pointer;
     transition-duration: 0.2s;
 }
