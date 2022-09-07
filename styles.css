@@ -5,7 +5,8 @@ body {
     background-color: #000000;
     background-image: url(/Aboutme/pictures/background.jpg);
     background-repeat: no-repeat;
-    overflow-x: hidden;
+    overflow: hidden;
+    
 
 }
 
@@ -304,6 +305,230 @@ img{
     
 }
 
+.area{
+  left: 50%;
+}
+.area :nth-child(2n){
+  
+  position: absolute; 
+  margin-left:10vh ;
+  background-color: #00000069;
+  border-radius: 30%;
+  width: 70px;
+  height: 70px;
+  bottom: -10vh;
+  left: -5vh;
+  animation: morph 8.7s ease-in-out infinite; 
+   animation-fill-mode: both; 
+  animation-direction: forwards;
+  z-index: -1;
+  animation-delay: 0.5s ;
+}
+.area :nth-child(3n){
+  
+  position: absolute; 
+  margin-left:10vh ;
+  background-color: #00000062;
+  border-radius: 30%;
+  width: 60px;
+  height: 60px;
+  bottom: -10vh;
+  left: 15vh;
+  animation: morph 8.5s ease-in-out infinite;
+   animation-fill-mode: both; 
+  animation-direction: forwards;
+  z-index: -1;
+  animation-delay: 1.5s ;
+}
+.area :nth-child(4n){
+  
+  position: absolute; 
+  margin-left:10vh ;
+  background-color: #00000069;
+  border-radius: 20%;
+  width: 90px;
+  height: 90px;
+  bottom: -10vh;
+  left: 35vh;
+  animation: morph 9s ease-in-out infinite;
+   animation-fill-mode: both; 
+  animation-direction: forwards;
+  z-index: -1;
+  animation-delay: 2s ;
+}
+
+.area :nth-child(5n){
+  
+  position: absolute; 
+  margin-left:10vh ;
+  background-color: #00000069;
+  border-radius: 20%;
+  width: 70px;
+  height: 70px;
+  bottom: -10vh;
+  left: 55vh;
+  animation: morph 7s ease-in-out infinite;
+   animation-fill-mode: both; 
+  animation-direction: forwards;
+  z-index: -1;
+  animation-delay: 2.5s ;
+}
+.area :nth-child(6n){
+  
+  position: absolute; 
+  margin-left:10vh ;
+  background-color: #00000069;
+  border-radius: 20%;
+  width: 60px;
+  height: 60px;
+  bottom: -10vh;
+  left: 75vh;
+  animation: morph 10s ease-in-out infinite;
+   animation-fill-mode: both; 
+  animation-direction: forwards;
+  z-index: -1;
+  animation-delay: 1s ;
+  
+}
+.area :nth-child(7n){
+  
+  position: absolute; 
+  margin-left:10vh ;
+  background-color: #00000069;
+  border-radius: 20%;
+  width: 68px;
+  height: 68px;
+  bottom: -10vh;
+  left: 90vh;
+  animation: morph 9.2s ease-in-out infinite;
+   animation-fill-mode: both; 
+  animation-direction: forwards;
+  z-index: -1;
+  animation-delay: 2.1s ;
+  
+}
+
+.area :nth-child(8n){
+  
+  position: absolute; 
+  margin-left:10vh ;
+  background-color: #00000069;
+  border-radius: 20%;
+  width: 60px;
+  height: 60px;
+  bottom: -10vh;
+  left: 105vh;
+  animation: morph 8.7 ease-in-out infinite;
+   animation-fill-mode: both; 
+  animation-direction: forwards;
+  z-index: -1;
+  animation-delay: 1.9s ;
+  
+}
+.area :nth-child(9n){
+  
+  position: absolute; 
+  margin-left:10vh ;
+  background-color: #00000069;
+  border-radius: 20%;
+  width: 60px;
+  height: 60px;
+  bottom: -10vh;
+  left: 120vh;
+  animation: morph 9.5 ease-in-out infinite;
+   animation-fill-mode: both; 
+  animation-direction: forwards;
+  z-index: -1;
+  animation-delay: 2.5s ;
+  
+}
+.area :nth-child(10n){
+  
+  position: absolute; 
+  margin-left:10vh ;
+  background-color: #00000069;
+  border-radius: 20%;
+  width: 74px;
+  height: 74px;
+  bottom: -10vh;
+  left: 135vh;
+  animation: morph 8.2s ease-in-out infinite;
+   animation-fill-mode: both; 
+  animation-direction: forwards;
+  z-index: -1;
+  animation-delay: 1.76s ;
+  
+}
+
+.area :nth-child(11n){
+  
+  position: absolute; 
+  margin-left:10vh ;
+  background-color: #00000069;
+  border-radius: 20%;
+  width: 55px;
+  height: 55px;
+  bottom: -10vh;
+  left: 150vh;
+  animation: morph 7.3s ease-in-out infinite;
+   animation-fill-mode: both; 
+  animation-direction: forwards;
+  z-index: -1;
+  animation-delay: 1.32s ;
+  
+}
+
+.area :nth-child(12n){
+  
+  position: absolute; 
+  margin-left:10vh ;
+  background-color: #00000069;
+  border-radius: 20%;
+  width: 70px;
+  height: 70px;
+  bottom: -10vh;
+  left: 165vh;
+  animation: morph 10s ease-in-out infinite;
+   animation-fill-mode: both; 
+  animation-direction: forwards;
+  z-index: -1;
+  animation-delay: 1.45s ;
+  
+}
+.area :nth-child(13n){
+  
+  position: absolute; 
+  margin-left:10vh ;
+  background-color: #00000069;
+  border-radius: 20%;
+  width: 65px;
+  height: 65px;
+  bottom: -10vh;
+  left: 180vh;
+  animation: morph 7.89s ease-in-out infinite;
+   animation-fill-mode: both; 
+  animation-direction: forwards;
+  z-index: -1;
+  animation-delay: 1.23s ;
+  
+}
+
+
+@keyframes morph {
+  from{
+    bottom: -10vh;
+    transform: rotate(359deg);
+    
+  }
+  50%{
+    
+  }
+  to{
+    bottom: 62vh;
+    border-radius: 50%;
+    opacity: 0;
+  }
+}
 @media only screen and (max-width :500px){
   body{
     overflow-x: hidden;
