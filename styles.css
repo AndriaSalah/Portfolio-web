@@ -1,12 +1,12 @@
 body {
-    
     height: 100%;
     width: 100%;
     background-color: #000000;
     background-image: url(/Aboutme/pictures/background.jpg);
     background-repeat: no-repeat;
     overflow: hidden;
-    
+    justify-content: center;
+    align-items: center;
 
 }
 
@@ -166,35 +166,75 @@ a{
     align-self: center;
 }
 
+.wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  overflow: hidden;
+  line-height: 0;
+  z-index: -1;
+}
+
+.wave svg {
+  position: relative;
+  display: block;
+  width: calc(106% + 1.3px);
+  height: 224px;
+  transform: rotateY(180deg);
+  animation: wavemotion 20s infinite linear forwards alternate;
+}
+
+.wave .shape-fill {
+  fill: #8D357D;
+}
+
+@keyframes wavemotion {
+  from{
+    transform: translateX(-50%);
+  }
+  to{
+    transform: translateX(-5%);
+  }
+  
+}
+.center{
+  /* display: flex;
+  flex-direction: column; */
+  width: inherit;
+  align-items: center;
+  justify-content: center;
+}
 .main {
     /* background-color: #c3c3c357 ; */
     display: flex;
     flex-flow: row wrap;
-    width: 100%;
+    width: 100;
     height: 100%;
     border-radius: 2rem;
     border: none;
-    /* box-shadow: 5px 5px 18px 10px #9999999d; */
+    /* left: 22%; */
     padding: 1rem;
     margin-top: 2rem;
-    margin-left: auto;
+    
     align-content: center;
     justify-content: center;
     font-family: 'Inter', sans-serif;
-    font-weight: 100px;
-    letter-spacing: 10;
     color: #ffffff;
     overflow: hidden;
     position: relative;
-    /* position: fixed; */
+    animation: float 3s ease-in-out infinite alternate;
 }
 
-.info{
-text-align: center;
-width: 30%;
-/* color: #ffffff; */
+@keyframes float {
+  100%{
+    transform: translate(0vh,5vh);
+  }
 }
-body .info{
+.main:hover{
+  animation-play-state: paused;
+}
+ .info{
   text-align: center;
   width: 100%;
   color: #ffffff;
@@ -228,61 +268,13 @@ body .info{
     border: none;
 }
 
-.wave {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 200%;
-  overflow: hidden;
-  line-height: 0;
-  z-index: -1;
-}
-
-.wave svg {
-  position: relative;
-  display: block;
-  width: calc(106% + 1.3px);
-  height: 224px;
-  transform: rotateY(180deg);
-  animation: wavemotion 20s infinite linear forwards alternate;
-}
-
-.wave .shape-fill {
-  fill: #8D357D;
-}
-
-@keyframes wavemotion {
-  from{
-    transform: translateX(-50%);
-  }
-  to{
-    transform: translateX(-5%);
-  }
-  
-}
 
 img{
     height: 128px; ;
     width: 128px;
     border-radius: 50% ;
 }
-.main-me{
-    display: flex ;
-    flex-flow: row,wrap;
-    background-color:#c3c3c357 ;
-    padding: 40px;
-    width: 30%;
-    border-radius: 30px;
-    justify-content: center;
-    align-content: center;
-}
-.txt-links{
-    text-align: center;
-    margin-left: 30%;
-    font-family: 'Inter', sans-serif;
-    font-size: large;
-    
-}
+
 
 .area{
   left: 50%;
@@ -524,6 +516,7 @@ img{
         flex-flow: column ;
         padding: 0;
         margin: 1rem;
+        margin-top: 0px;
         
     }
     .second,.link{
@@ -543,6 +536,11 @@ img{
       }
       .wave{
         width: 200%;
+      }
+     
+     
+      .area :nth-child(4n){
+        visibility: hidden;
       }
 
 }
