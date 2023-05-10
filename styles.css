@@ -92,7 +92,7 @@ a{
   }
   
   .dropdown-content {
-    right: 17rem;
+    right: 5.5rem;
     border-radius: 20px;
     margin-top: 2rem;
     text-align: center;
@@ -245,7 +245,7 @@ a{
 .second-container{
   display: flex;
   flex-flow: row;
-  padding-left: 15%;
+  justify-content: center;
 }
 .second{
     flex-wrap: wrap;
@@ -256,23 +256,30 @@ a{
     text-align: center;
     font-family: 'Roboto', sans-serif;
     font-size: medium;
-    width: 30%;
+    width: 20%;
 }
 .link{
     padding: 1rem;
     font-family: inherit;
 }
+
 .link h3 a:hover{
-    color: #c75717;
+    color: #e073cc;
     background-color: transparent;
     border: none;
 }
-
+.latest h1 a:hover{
+  color: #e073cc;
+  background-color: transparent;
+  border: none;
+  
+}
 
 img{
     height: 128px; ;
     width: 128px;
     border-radius: 50% ;
+    object-fit: cover;
 }
 
 

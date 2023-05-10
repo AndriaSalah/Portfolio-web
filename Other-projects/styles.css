@@ -85,7 +85,7 @@ a{
 }
 
 .dropdown-content {
-  right: 17rem;
+  right: 5.5rem;
   border-radius: 20px;
   margin-top: 2rem;
   text-align: center;
@@ -183,8 +183,10 @@ a{
 }
 .c1container img{
   border-radius: 50%;
-  width: 100px;
+  height: 128px; ;
+  width: 128px;
   box-shadow: 5px 5px 5px ;
+  object-fit: cover;
 }
 .c2{
   display: flex;
